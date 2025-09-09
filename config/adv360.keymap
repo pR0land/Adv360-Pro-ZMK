@@ -83,28 +83,65 @@
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
 
-    // --- Danish letters ---
-    ae_morph: ae_morph {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      // æ by default, Æ with Shift
-      bindings = <&uc 0x00E6>, <&uc 0x00C6>;
-      mods = <(MOD_LSFT | MOD_RSFT)>;
-    };
-    oe_morph: oe_morph {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      // ø by default, Ø with Shift
-      bindings = <&uc 0x00F8>, <&uc 0x00D8>;
-      mods = <(MOD_LSFT | MOD_RSFT)>;
-    };
-    aa_morph: aa_morph {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      // å by default, Å with Shift
-      bindings = <&uc 0x00E5>, <&uc 0x00C5>;
-      mods = <(MOD_LSFT | MOD_RSFT)>;
-    };
+    alt_aa: alt_aa {
+            compatible = "zmk,behavior-key";
+            label = "alt_aa";
+            bindings = <&kp LALT &kp N2 &kp N2 &kp 9 &kp release_LALT>;
+        };
+
+        alt_AA: alt_AA {
+            compatible = "zmk,behavior-key";
+            label = "alt_AA";
+            bindings = <&kp LALT &kp N0 &kp N1 &kp N9 &kp 7 &kp release_LALT>;
+        };
+
+        alt_ae: alt_ae {
+            compatible = "zmk,behavior-key";
+            label = "alt_ae";
+            bindings = <&kp LALT &kp N2 &kp N3 &kp 0 &kp release_LALT>;
+        };
+
+        alt_AE: alt_AE {
+            compatible = "zmk,behavior-key";
+            label = "alt_AE";
+            bindings = <&kp LALT &kp N0 &kp N1 &kp N9 &kp 8 &kp release_LALT>;
+        };
+
+        alt_oe: alt_oe {
+            compatible = "zmk,behavior-key";
+            label = "alt_oe";
+            bindings = <&kp LALT &kp N3 &kp N3 &kp 9 &kp release_LALT>;
+        };
+
+        alt_OE: alt_OE {
+            compatible = "zmk,behavior-key";
+            label = "alt_OE";
+            bindings = <&kp LALT &kp N0 &kp N1 &kp N4 &kp 0 &kp release_LALT>;
+        };
+// å / Å
+aa_morph: aa_morph {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    bindings = <&kp alt_aa>, <&kp alt_AA>;
+    mods = <MOD_LSFT>;
+};
+
+// æ / Æ
+ae_morph: ae_morph {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    bindings = <&kp alt_ae>, <&kp alt_AE>;
+    mods = <MOD_LSFT>;
+};
+
+// œ / Œ
+oe_morph: oe_morph {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    bindings = <&kp alt_oe>, <&kp alt_OE>;
+    mods = <MOD_LSFT>;
+};
+
 };
 
   keymap {
