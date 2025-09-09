@@ -1,0 +1,8 @@
+/ {
+  behaviors {
+    uc: uc {
+      compatible = "zmk,behavior-unicode";
+      #binding-cells = <1>;
+    };
+  };
+};
