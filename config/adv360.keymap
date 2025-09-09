@@ -20,7 +20,91 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+    // --- Number row reversed ---
+    bang1: bang1 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp EXCL>, <&kp N1>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
     };
+    at2: at2 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp AT>, <&kp N2>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+    hash3: hash3 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp HASH>, <&kp N3>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+    dollar4: dollar4 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp DLLR>, <&kp N4>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+    percent5: percent5 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp PRCNT>, <&kp N5>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+    caret6: caret6 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp CARET>, <&kp N6>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+    amp7: amp7 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp AMPS>, <&kp N7>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+    star8: star8 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp ASTRK>, <&kp N8>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+    lpar9: lpar9 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp LPAR>, <&kp N9>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+    rpar0: rpar0 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp RPAR>, <&kp N0>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+
+    // --- Danish letters ---
+    ae_morph: ae_morph {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      // æ by default, Æ with Shift
+      bindings = <&uc 0x00E6>, <&uc 0x00C6>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+    oe_morph: oe_morph {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      // ø by default, Ø with Shift
+      bindings = <&uc 0x00F8>, <&uc 0x00D8>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+    aa_morph: aa_morph {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      // å by default, Å with Shift
+      bindings = <&uc 0x00E5>, <&uc 0x00C5>;
+      mods = <(MOD_LSFT | MOD_RSFT)>;
+    };
+};
 
   keymap {
     compatible = "zmk,keymap";
@@ -28,7 +112,7 @@
     default_layer {
       display-name = "Base";
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp EQUAL &bang1    &at2     &hash3   &dollar4   &percent5 &tog 1                                                        &mo 3 &caret6 &amp7 &star8    &lpar9   &rpar0   &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
@@ -49,8 +133,8 @@
       display-name = "Fn";
       bindings = <
         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &ae_morph &trans &trans  &none                                           &none &trans &trans &trans &oe_morph  &trans  &trans
+        &trans &aa_morph &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
