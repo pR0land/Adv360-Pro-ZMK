@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: MIT
+description: Unicode behavior
+
+compatible: "zmk,behavior-unicode"
+
+include: one_param.yaml
