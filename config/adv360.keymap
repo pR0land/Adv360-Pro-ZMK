@@ -87,45 +87,45 @@
 ae_macro_combined: ae_macro_combined {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&macro_press &kp LALT>, <&macro_wait 5>,
+    bindings = <&macro_press &kp LALT>, <&macro_wait_time 5>,
                <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N0>,
-               <&macro_wait 5>, <&macro_release &kp LALT>;
+               <&macro_wait_time 5>, <&macro_release &kp LALT>;
 };
 oe_macro_combined: oe_macro_combined {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&macro_press &kp LALT>, <&macro_wait 5>,
+    bindings = <&macro_press &kp LALT>, <&macro_wait_time 5>,
                <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N8>,
-               <&macro_wait 5>, <&macro_release &kp LALT>;
+               <&macro_wait_time 5>, <&macro_release &kp LALT>;
 };
 aa_macro_combined: aa_macro_combined {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&macro_press &kp LALT>, <&macro_wait 5>,
+    bindings = <&macro_press &kp LALT>, <&macro_wait_time 5>,
                <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N9>,
-               <&macro_wait 5>, <&macro_release &kp LALT>;
+               <&macro_wait_time 5>, <&macro_release &kp LALT>;
 };
 // Uppercase Macros
 ae_upper_macro_combined: ae_upper_macro_combined {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&macro_press &kp LALT>, <&macro_wait 5>,
+    bindings = <&macro_press &kp LALT>, <&macro_wait_time 5>,
                <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N8>,
-               <&macro_wait 5>, <&macro_release &kp LALT>;
+               <&macro_wait_time 5>, <&macro_release &kp LALT>;
 };
 oe_upper_macro_combined: oe_upper_macro_combined {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&macro_press &kp LALT>, <&macro_wait 5>,
+    bindings = <&macro_press &kp LALT>, <&macro_wait_time 5>,
                <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N6>,
-               <&macro_wait 5>, <&macro_release &kp LALT>;
+               <&macro_wait_time 5>, <&macro_release &kp LALT>;
 };
 aa_upper_macro_combined: aa_upper_macro_combined {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&macro_press &kp LALT>, <&macro_wait 5>,
+    bindings = <&macro_press &kp LALT>, <&macro_wait_time 5>,
                <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N7>,
-               <&macro_wait 5>, <&macro_release &kp LALT>;
+               <&macro_wait_time 5>, <&macro_release &kp LALT>;
 };
 // --- Mod-Morph behaviors to handle Shift for Danish letters ---
 ae_shift: ae_shift {
