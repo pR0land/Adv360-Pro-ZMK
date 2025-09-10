@@ -22,47 +22,6 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
-macros {
-        // Lowercase
-        ae_macro: ae_macro {
-            compatible = "zmk,behavior-text";
-            #binding-cells = <0>;
-            label = "æ";
-            text = "æ";
-        };
-        oe_macro: oe_macro {
-            compatible = "zmk,behavior-text";
-            #binding-cells = <0>;
-            label = "ø";
-            text = "ø";
-        };
-        aa_macro: aa_macro {
-            compatible = "zmk,behavior-text";
-            #binding-cells = <0>;
-            label = "å";
-            text = "å";
-        };
-
-        // Uppercase
-        AE_macro: AE_macro {
-            compatible = "zmk,behavior-text";
-            #binding-cells = <0>;
-            label = "Æ";
-            text = "Æ";
-        };
-        OE_macro: OE_macro {
-            compatible = "zmk,behavior-text";
-            #binding-cells = <0>;
-            label = "Ø";
-            text = "Ø";
-        };
-        AA_macro: AA_macro {
-            compatible = "zmk,behavior-text";
-            #binding-cells = <0>;
-            label = "Å";
-            text = "Å";
-        };
-    };
     // --- Number row reversed ---
     bang1: bang1 {
       compatible = "zmk,behavior-mod-morph";
@@ -125,27 +84,56 @@ macros {
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
 
-    // Mod-morph keys: lowercase normally, uppercase with shift
+    // --- Danish letters (mod-morph) ---
+        ae_macro: ae_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
+            text = "æ";
+        };
+        AE_macro: AE_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
+            text = "Æ";
+        };
+
+        oe_macro: oe_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
+            text = "ø";
+        };
+        OE_macro: OE_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
+            text = "Ø";
+        };
+
+        aa_macro: aa_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
+            text = "å";
+        };
+        AA_macro: AA_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
+            text = "Å";
+        };
+
+        // --- Mod-morph keys ---
         ae_shift: ae_shift {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            label = "æ/Æ";
             bindings = <&ae_macro>, <&AE_macro>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
-
         oe_shift: oe_shift {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            label = "ø/Ø";
             bindings = <&oe_macro>, <&OE_macro>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
-
         aa_shift: aa_shift {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            label = "å/Å";
             bindings = <&aa_macro>, <&AA_macro>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
