@@ -85,10 +85,9 @@
     };
 // --- Danish letters (Unicode macros) ---
 ae_macro: ae_macro {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <1>;
-    label = "æ";
-    macro-strings = <&unicode U+00E6>;
+    compatible = "zmk,behavior-text";
+    #binding-cells = <0>;
+    text = "æ";
 };
 AE_macro: AE_macro {
     compatible = "zmk,behavior-macro";
