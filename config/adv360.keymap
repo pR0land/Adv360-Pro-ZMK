@@ -100,8 +100,6 @@
         ae_shift: ae_shift { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&ae_macro>, <&AE_macro>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         oe_shift: oe_shift { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&oe_macro>, <&OE_macro>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         aa_shift: aa_shift { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&aa_macro>, <&AA_macro>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-};
-
 
 };
 
