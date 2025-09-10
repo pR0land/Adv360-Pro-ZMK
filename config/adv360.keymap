@@ -8,6 +8,20 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+macros {
+        ae_macro: ae_macro {
+            label = "æ";
+            bindings = <&text "æ">;
+        };
+        oe_macro: oe_macro {
+            label = "ø";
+            bindings = <&text "ø">;
+        };
+        aa_macro: aa_macro {
+            label = "å";
+            bindings = <&text "å">;
+        };
+    };
     behaviors {
       #include "macros.dtsi"
       #include "version.dtsi"
@@ -83,64 +97,29 @@
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
 
-    alt_aa: alt_aa {
-            compatible = "zmk,behavior-key";
-            label = "alt_aa";
-            bindings = <&kp LALT &kp N2 &kp N2 &kp 9 &kp release_LALT>;
+    ae_shift: ae_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "æ/Æ";
+            #binding-cells = <0>;
+            bindings = <&ae_macro &text "Æ">;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        alt_AA: alt_AA {
-            compatible = "zmk,behavior-key";
-            label = "alt_AA";
-            bindings = <&kp LALT &kp N0 &kp N1 &kp N9 &kp 7 &kp release_LALT>;
+        oe_shift: oe_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ø/Ø";
+            #binding-cells = <0>;
+            bindings = <&oe_macro &text "Ø">;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        alt_ae: alt_ae {
-            compatible = "zmk,behavior-key";
-            label = "alt_ae";
-            bindings = <&kp LALT &kp N2 &kp N3 &kp 0 &kp release_LALT>;
+        aa_shift: aa_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "å/Å";
+            #binding-cells = <0>;
+            bindings = <&aa_macro &text "Å">;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        alt_AE: alt_AE {
-            compatible = "zmk,behavior-key";
-            label = "alt_AE";
-            bindings = <&kp LALT &kp N0 &kp N1 &kp N9 &kp 8 &kp release_LALT>;
-        };
-
-        alt_oe: alt_oe {
-            compatible = "zmk,behavior-key";
-            label = "alt_oe";
-            bindings = <&kp LALT &kp N3 &kp N3 &kp 9 &kp release_LALT>;
-        };
-
-        alt_OE: alt_OE {
-            compatible = "zmk,behavior-key";
-            label = "alt_OE";
-            bindings = <&kp LALT &kp N0 &kp N1 &kp N4 &kp 0 &kp release_LALT>;
-        };
-// å / Å
-aa_morph: aa_morph {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&kp alt_aa>, <&kp alt_AA>;
-    mods = <MOD_LSFT>;
-};
-
-// æ / Æ
-ae_morph: ae_morph {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&kp alt_ae>, <&kp alt_AE>;
-    mods = <MOD_LSFT>;
-};
-
-// œ / Œ
-oe_morph: oe_morph {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&kp alt_oe>, <&kp alt_OE>;
-    mods = <MOD_LSFT>;
-};
 
 };
 
@@ -171,8 +150,8 @@ oe_morph: oe_morph {
       display-name = "Fn";
       bindings = <
         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &ae_morph &trans &trans  &none                                           &none &trans &trans &trans &oe_morph  &trans  &trans
-        &trans &aa_morph &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &ae_shift &trans &trans  &none                                           &none &trans &trans &trans &oe_shift  &trans  &trans
+        &trans &aa_shift &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
