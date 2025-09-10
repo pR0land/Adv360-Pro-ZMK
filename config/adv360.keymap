@@ -83,14 +83,6 @@
       bindings = <&kp RPAR>, <&kp N0>;
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
-
-    ae_macro: ae_macro {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <1>;
-    label = "æ";
-    macro-strings = <&unicode U+00E6>;
-};
-
 // --- Danish letters (Unicode macros) ---
 ae_macro: ae_macro {
     compatible = "zmk,behavior-macro";
@@ -152,6 +144,9 @@ aa_shift: aa_shift {
     bindings = <&aa_macro>, <&AA_macro>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
 };
+};
+
+
 };
 
   keymap {
