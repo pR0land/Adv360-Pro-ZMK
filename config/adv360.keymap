@@ -9,17 +9,44 @@
 
 / {
 macros {
+        // Lowercase
         ae_macro: ae_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
             label = "æ";
-            bindings = <&text "æ">;
+            text = "æ";
         };
         oe_macro: oe_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
             label = "ø";
-            bindings = <&text "ø">;
+            text = "ø";
         };
         aa_macro: aa_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
             label = "å";
-            bindings = <&text "å">;
+            text = "å";
+        };
+
+        // Uppercase
+        AE_macro: AE_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
+            label = "Æ";
+            text = "Æ";
+        };
+        OE_macro: OE_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
+            label = "Ø";
+            text = "Ø";
+        };
+        AA_macro: AA_macro {
+            compatible = "zmk,behavior-text";
+            #binding-cells = <0>;
+            label = "Å";
+            text = "Å";
         };
     };
     behaviors {
@@ -97,28 +124,29 @@ macros {
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
 
-    ae_shift: ae_shift {
+    // Mod-morph keys: lowercase normally, uppercase with shift
+        ae_shift: ae_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "æ/Æ";
             #binding-cells = <0>;
-            bindings = <&text "æ">, <&text "Æ">;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
+            label = "æ/Æ";
+            bindings = <&ae_macro>, <&AE_macro>;
+            mods = <MOD_LSFT MOD_RSFT>;
         };
 
         oe_shift: oe_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "ø/Ø";
             #binding-cells = <0>;
-            bindings = <&text "ø">, <&text "Ø">;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
+            label = "ø/Ø";
+            bindings = <&oe_macro>, <&OE_macro>;
+            mods = <MOD_LSFT MOD_RSFT>;
         };
 
         aa_shift: aa_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "å/Å";
             #binding-cells = <0>;
-            bindings = <&text "å">, <&text "Å">;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
+            label = "å/Å";
+            bindings = <&aa_macro>, <&AA_macro>;
+            mods = <MOD_LSFT MOD_RSFT>;
         };
 };
 
