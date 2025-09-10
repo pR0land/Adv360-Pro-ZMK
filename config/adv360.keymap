@@ -102,7 +102,7 @@ macros {
             label = "æ/Æ";
             #binding-cells = <0>;
             bindings = <&ae_macro &text "Æ">;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <MOD_LSFT MOD_RSFT>;
         };
 
         oe_shift: oe_shift {
@@ -110,7 +110,7 @@ macros {
             label = "ø/Ø";
             #binding-cells = <0>;
             bindings = <&oe_macro &text "Ø">;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <MOD_LSFT MOD_RSFT>;
         };
 
         aa_shift: aa_shift {
@@ -118,9 +118,8 @@ macros {
             label = "å/Å";
             #binding-cells = <0>;
             bindings = <&aa_macro &text "Å">;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <MOD_LSFT MOD_RSFT>;
         };
-
 };
 
   keymap {
