@@ -100,7 +100,7 @@ oe_shift_final: oe_shift_final { compatible = "zmk,behavior-mod-morph"; #binding
 aa_shift_final: aa_shift_final { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&alt_macro &aa_macro_short>, <&alt_macro &aa_upper_macro_short>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
 // This new macro is what the mod-morph calls to handle the ALT key
-alt_macro: alt_macro { compatible = "zmk,behavior-macro"; label = "ALT_MACRO"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_wait_ms 5>, <&macro_release &kp LALT>; };
+alt_macro: alt_macro { compatible = "zmk,behavior-macro"; label = "ALT_MACRO"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_wait 5>, <&macro_release &kp LALT>; };
 
 };
 
