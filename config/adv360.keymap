@@ -101,6 +101,7 @@
         oe_shift: oe_shift { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&oe_macro>, <&oe_upper_macro>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         aa_shift: aa_shift { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&aa_macro>, <&aa_upper_macro>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 };
+};
 
   keymap {
     compatible = "zmk,keymap";
