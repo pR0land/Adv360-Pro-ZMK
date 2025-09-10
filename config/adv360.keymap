@@ -95,9 +95,9 @@ aa_upper_macro_short: aa_upper_macro_short { compatible = "zmk,behavior-macro"; 
 
 // --- Mod-Morph behaviors to handle Shift for Danish letters ---
 // This handles the ALT press/release and calls the simplified macros
-ae_shift_final: ae_shift_final { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&alt_macro &ae_macro_short>, <&alt_macro &ae_upper_macro_short>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-oe_shift_final: oe_shift_final { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&alt_macro &oe_macro_short>, <&alt_macro &oe_upper_macro_short>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-aa_shift_final: aa_shift_final { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&alt_macro &aa_macro_short>, <&alt_macro &aa_upper_macro_short>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+ae_shift: ae_shift_final { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&alt_macro &ae_macro_short>, <&alt_macro &ae_upper_macro_short>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+oe_shift: oe_shift_final { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&alt_macro &oe_macro_short>, <&alt_macro &oe_upper_macro_short>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+aa_shift: aa_shift_final { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&alt_macro &aa_macro_short>, <&alt_macro &aa_upper_macro_short>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
 // This new macro is what the mod-morph calls to handle the ALT key
 alt_macro: alt_macro { compatible = "zmk,behavior-macro"; label = "ALT_MACRO"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_wait_time 5>, <&macro_release &kp LALT>; };
