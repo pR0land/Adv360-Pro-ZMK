@@ -94,7 +94,7 @@
         // Uppercase
         UAE_macro: AE_macro { compatible = "zmk,behavior-macro"; label = "AE_UPPER"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N8>, <&macro_release &kp LALT>; };
         UOE_macro: OE_macro { compatible = "zmk,behavior-macro"; label = "OE_UPPER"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N6>, <&macro_release &kp LALT>; };
-        uAA_macro: AA_macro { compatible = "zmk,behavior-macro"; label = "AA_UPPER"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N7>, <&macro_release &kp LALT>; };
+        UAA_macro: AA_macro { compatible = "zmk,behavior-macro"; label = "AA_UPPER"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N7>, <&macro_release &kp LALT>; };
 
         // --- Mod-Morph behaviors to handle Shift for Danish letters ---
         ae_shift: ae_shift { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&ae_macro>, <&UAE_macro>; mods = <(MOD_LSFT|MOD_RSFT)>; };
