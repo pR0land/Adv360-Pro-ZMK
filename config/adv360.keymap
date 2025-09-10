@@ -84,14 +84,14 @@
       mods = <(MOD_LSFT | MOD_RSFT)>;
     };
 // Simplified Lowercase Macros (No ALT press/release)
-ae_macro_short: ae_macro_short { compatible = "zmk,behavior-macro"; bindings = <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N0>; };
-oe_macro_short: oe_macro_short { compatible = "zmk,behavior-macro"; bindings = <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N8>; };
-aa_macro_short: aa_macro_short { compatible = "zmk,behavior-macro"; bindings = <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N9>; };
+ae_macro_short: ae_macro_short { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N0>; };
+oe_macro_short: oe_macro_short { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N8>; };
+aa_macro_short: aa_macro_short { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N9>; };
 
 // Simplified Uppercase Macros (No ALT press/release)
-ae_upper_macro_short: ae_upper_macro_short { compatible = "zmk,behavior-macro"; bindings = <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N8>; };
-oe_upper_macro_short: oe_upper_macro_short { compatible = "zmk,behavior-macro"; bindings = <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N6>; };
-aa_upper_macro_short: aa_upper_macro_short { compatible = "zmk,behavior-macro"; bindings = <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N7>; };
+ae_upper_macro_short: ae_upper_macro_short { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N8>; };
+oe_upper_macro_short: oe_upper_macro_short { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N6>; };
+aa_upper_macro_short: aa_upper_macro_short { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N7>; };
 
 // --- Mod-Morph behaviors to handle Shift for Danish letters ---
 // This handles the ALT press/release and calls the simplified macros
