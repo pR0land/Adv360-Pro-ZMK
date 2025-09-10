@@ -101,24 +101,24 @@ macros {
             compatible = "zmk,behavior-mod-morph";
             label = "æ/Æ";
             #binding-cells = <0>;
-            bindings = <&ae_macro &text "Æ">;
-            mods = <MOD_LSFT MOD_RSFT>;
+            bindings = <&text "æ">, <&text "Æ">;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         oe_shift: oe_shift {
             compatible = "zmk,behavior-mod-morph";
             label = "ø/Ø";
             #binding-cells = <0>;
-            bindings = <&oe_macro &text "Ø">;
-            mods = <MOD_LSFT MOD_RSFT>;
+            bindings = <&text "ø">, <&text "Ø">;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         aa_shift: aa_shift {
             compatible = "zmk,behavior-mod-morph";
             label = "å/Å";
             #binding-cells = <0>;
-            bindings = <&aa_macro &text "Å">;
-            mods = <MOD_LSFT MOD_RSFT>;
+            bindings = <&text "å">, <&text "Å">;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 };
 
